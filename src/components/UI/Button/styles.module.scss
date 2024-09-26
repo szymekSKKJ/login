@@ -1,0 +1,31 @@
+.button {
+  width: auto;
+  height: auto;
+  background-color: #0eb387;
+  padding: 8px 20px 8px 20px;
+  border-radius: 1000px;
+  font-size: 20px;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: 250ms;
+  position: relative;
+  overflow: hidden;
+
+  &:hover {
+    filter: brightness(1.1);
+  }
+
+  .clickEffect {
+    width: auto;
+    height: 100%;
+    aspect-ratio: 1/1;
+    background-color: rgba(255, 255, 255, 0.3);
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    border-radius: 100%;
+    transition: 400ms opacity, 400ms transform;
+    transform: scale(0);
+  }
+}

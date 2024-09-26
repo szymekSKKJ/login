@@ -1,0 +1,62 @@
+.input {
+  --errorColor: #e56666;
+
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+
+  input {
+    width: 100%;
+    height: auto;
+    background-color: #3c465d;
+    border: none;
+    outline: none;
+    color: white;
+    padding: 8px;
+    font-size: 20px;
+    order: 2;
+    border: unset;
+    transition: 500ms;
+    border-radius: 4px;
+
+    &::placeholder {
+      width: 100%;
+      color: rgba(255, 255, 255, 0.5);
+      transition: 250ms;
+    }
+
+    &:focus,
+    &:not(:placeholder-shown),
+    &:is(.error) {
+      &::placeholder {
+        transform: translateX(-100%);
+      }
+
+      + label {
+        transform: translateX(0%);
+      }
+    }
+  }
+
+  input.error {
+    border-bottom: solid 2px var(--errorColor);
+  }
+
+  label {
+    width: 100%;
+    height: 100%;
+    line-height: 1;
+    order: 1;
+    transition: 500ms transform;
+    color: white;
+    margin-bottom: 5px;
+    transform: translateX(-100%);
+    font-size: 15px;
+  }
+
+  input:is(.error) + label {
+    color: var(--errorColor);
+  }
+}
